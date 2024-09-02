@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "./ui/Button";
 import { Form } from "./Form";
 import { Mnemonics } from "./Mnemonics";
 import { WalletSlider } from "./WalletsSlider";

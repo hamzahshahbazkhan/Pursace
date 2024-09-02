@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { generateMnemonic } from "bip39";
-import {  Button } from "@/components/ui/Button";
+import {  Button } from "./ui/Button";
 import { SecondaryButton } from "./ui/SecondaryButton";
 import { Container } from "./ui/Containers";
 import { Main } from "./Main";

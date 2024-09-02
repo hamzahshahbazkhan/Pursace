@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { generateMnemonic } from "bip39";
-import { SolanaWallet } from "@/components/SolanaWallet";
-import { EthWallet } from "@/components/EthWallet";
+// import { SolanaWallet } from "@/components/SolanaWallet";
+// import { EthWallet } from "@/components/EthWallet";
 import { Space_Mono } from "@next/font/google"
 import { Navbar } from "@/components/Navbar";
 import {Footer} from "@/components/Footer";
