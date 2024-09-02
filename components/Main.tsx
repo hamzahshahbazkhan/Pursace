@@ -38,7 +38,6 @@ export function Main() {
             .then(data => {
                 const solanaPrice = data.solana.usd;
                 setSolanaPrice(solanaPrice);
-                console.log(`The current price of Solana (SOL) is $${solanaPrice}`);
             })
             .catch(error => console.error('Error fetching price:', error));
 

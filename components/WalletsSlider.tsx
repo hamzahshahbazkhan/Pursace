@@ -16,7 +16,7 @@ interface WalletSliderProps {
 }
 
 export function WalletSlider({ usd }: WalletSliderProps) {
-    const [wallets, setWallets] = useState<WalletType[]>([]);
+const [wallets, setWallets] = useState<WalletType[]>([]);
 
     useEffect(() => {
         const temp = localStorage.getItem("wallets");

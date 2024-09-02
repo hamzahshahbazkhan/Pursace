@@ -35,7 +35,6 @@ export function Landing() {
 
     const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => {
         setSecretPhrase(event.currentTarget.value);
-        console.log(secretPhrase)
     };
 
     const handleSubmit = () => {
@@ -43,7 +42,6 @@ export function Landing() {
             const words = secretPhrase.trim().split(/\s+/);
 
             if (words.length === 12) {
-                console.log("HERE");
                 setMnemonics(secretPhrase);
                 localStorage.setItem("mnemonics", secretPhrase);
                 localStorage.setItem("wallets", "");

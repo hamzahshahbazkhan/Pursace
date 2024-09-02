@@ -1,7 +1,4 @@
-
-
 import React, { useState, useEffect } from 'react';
-import { Input } from './ui/Input';
 import { SmallButton } from './ui/Button';
 import { Connection, PublicKey } from '@solana/web3.js';
 import { TransactionList } from './TransactionList';
@@ -28,33 +25,19 @@ export function Wallet({ label, reRender, publicKey, secretKey, chain, usd }: Wa
     const [transactions, setTransactions] = useState<TransactionDetail[]>([]);
     const [showTransaction, setShowTransaction] = useState(false);
 
-    // const RPC_URL = process.env.URL;
-    const api = process.env.APIKEYFOR;
-    console.log(process.env.HELLO)
-    console.log("slj")
-    console.log(api)
-
-    const RPC_URL: string = `https://mainnet.helius-rpc.com/?api-key=${process.env.API}`;
-
-    if (!api) {
-        console.log("NO API FOUND")
-    }
+    const RPC_URL: string = `https://mainnet.helius-rpc.com/?api-key=${process.env.NEXT_PUBLIC_APIKEYFOR}`;
 
     const connection = new Connection(RPC_URL, 'confirmed');
     const WalletPublicKey = new PublicKey(publicKey);
 
     useEffect(() => {
-        // console.log(api)
-        console.log("DFJLD")
         const getBalance = async () => {
             try {
-                console.log("here");
 
                 const balance = await connection.getBalance(WalletPublicKey);
                 const txn = await connection.getSignaturesForAddress(WalletPublicKey, {
                     limit: 6,
                 });
-                console.log(balance);
 
 
                 const txnDetails: TransactionDetail[] = txn.map((tx) => ({
@@ -66,10 +49,8 @@ export function Wallet({ label, reRender, publicKey, secretKey, chain, usd }: Wa
 
                 const solBalance = balance / 1_000_000_000;
                 const inUsd = solBalance * usd;
-                console.log(inUsd);
                 const truncatedSolBalance: number = Math.floor(inUsd * 100) / 100;
 
-                console.log(truncatedSolBalance)
                 setCurrBal(truncatedSolBalance);
 
 

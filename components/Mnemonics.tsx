@@ -5,10 +5,10 @@ import { SecondaryButton } from "./ui/SecondaryButton";
 
 
 interface MnemonicsProps {
-    onClick:MouseEventHandler<HTMLButtonElement>;
+    onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
-export function Mnemonics({onClick}:MnemonicsProps) {
+export function Mnemonics({ onClick }: MnemonicsProps) {
     const [mnemonics, setMnemonics] = useState<string | null>(null);
     const [words, setWords] = useState<string[]>([]);
 
@@ -29,7 +29,6 @@ export function Mnemonics({onClick}:MnemonicsProps) {
             if (currentWord) {
                 newWords.push(currentWord);
             }
-            console.log('Separated words:', newWords); // Debugging line
             setWords(newWords);
         }
     };
@@ -57,8 +56,7 @@ export function Mnemonics({onClick}:MnemonicsProps) {
     }, []);
     useEffect(() => {
         separateWords();
-        console.log(words);
-    },[mnemonics]);
+    }, [mnemonics]);
 
     return (
         <div className="relative">

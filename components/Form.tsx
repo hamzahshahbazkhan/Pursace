@@ -58,15 +58,12 @@ export function Form({ wallet, onSubmit }: FormProps) {
         const derivedSeed = derivePath(path, seed.toString("hex")).key;
         const secret = nacl.sign.keyPair.fromSeed(derivedSeed).secretKey;
         const keypair = Keypair.fromSecretKey(secret);
-        console.log(keypair)
 
         setCurrentIndex((prevIndex: number) => {
             const newIndex = prevIndex + 1;
-            console.log(newIndex);
             return newIndex;
         });
 
-        console.log(currentIndex);
         setPublicKeys([...publicKeys, keypair.publicKey.toBase58()]);
         const currentWallet = {
 
